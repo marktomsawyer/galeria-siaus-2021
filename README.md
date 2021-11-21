@@ -8,7 +8,7 @@ apagar Gemfile.lock
 
 bundle update
 
-ESTRUTURA JEKYLL PHOTORAMA – MOSTRA VESTÍGIOS
+ESTRUTURA JEKYLL PHOTORAMA – SIARTERIA - GALERIA SIAUS
 
 (HOME)
 /index.html 
@@ -32,10 +32,6 @@ ESTRUTURA JEKYLL PHOTORAMA – MOSTRA VESTÍGIOS
     /archive
         /nome-do-trabalho
         /nome-do-trabalho-nome-do-autor.jpg 
-
-(PROGRAMAÇÃO)
-/programacao
-    /index.html
 
 (SOBRE)
 /sobre
