@@ -1,0 +1,165 @@
+---
+layout: page-galeria
+title: ""
+description: "Galeria Virtual do 2º SIAUS | 2021"
+active: gallery
+header-img: "img/bg-galeria-3.png"
+inicio: ""
+images:
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/o-que-fizemos-nos/
+   gallery-name: "O que fizemos nós?"
+   gallery-author: 
+
+ - image_path: /gallery/albums/ela-mae-terra.jpg
+   gallery-folder: /gallery/ela-mae-terra/
+   gallery-name: "Ela, Mãe Terra"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/araucarios-no-caminho/
+   gallery-name: "Araucárias nos Caminhos"
+   gallery-author: 
+
+ - image_path: /gallery/albums/o-mar-e-a-urbanidade.jpg
+   gallery-folder: /gallery/o-mar-e-a-urbanidade/
+   gallery-name: "O Mar e a Urbanidade"
+   gallery-author: 
+
+ - image_path: /gallery/albums/visadas-vazios.jpg
+   gallery-folder: /gallery/visadas-vazios/
+   gallery-name: "Visadas & Vazios"
+   gallery-author: 
+
+ - image_path: /gallery/albums/a-poluicao-da-alma-selvagem.jpg
+   gallery-folder: /gallery/a-poluicao-da-alma-selvagem/
+   gallery-name: "A Poluição Da Alma Selvagem"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/dois-minutos-para-a-meia-noite/
+   gallery-name: "Dois minutos paea a Meia-noite"
+   gallery-author: 
+
+ - image_path: /gallery/albums/efemera-o-retrato-de-genius-loci.jpg
+   gallery-folder: /gallery/efemera-o-retrato-de-genius-loci/
+   gallery-name: "Efêmera - O Retrato De Genius Loci"
+   gallery-author: 
+
+ - image_path: /gallery/albums/brasil-mostra-tua-cara.jpg
+   gallery-folder: /gallery/brasil-mostra-tua-cara/
+   gallery-name: "Brasil, Mostra Tua Cara!"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/res-piro/
+   gallery-name: "RES PIRO"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/meu-corpo-minha-morada/
+   gallery-name: "Meu Corpo Minha Morada"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/intervencao-artistica-e-urbana-renda-se/
+   gallery-name: "Intervenção artística e urbana Renda-se"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/revirando-espelhos/
+   gallery-name: "Revirando Espelhos: A arte como fonte reveladora dos vários atores do campo escolar"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/corpo-territorio-pandemico/
+   gallery-name: "Corpo-território Pandêmico"
+   gallery-author: 
+
+ - image_path: /gallery/albums/vale-nada.jpg
+   gallery-folder: /gallery/vale-nada/
+   gallery-name: "Vale Nada"
+   gallery-author: 
+
+ - image_path: /gallery/albums/cartografia-imaginaria-da-cidade-saudade.jpg
+   gallery-folder: /gallery/cartografia-imaginaria-da-cidade-saudade/
+   gallery-name: "Cartografia Imaginária Da Cidade-Saudade"
+   gallery-author: 
+
+ 
+ 
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+  <link rel="stylesheet" href="{{ "/css/selena.css" | prepend: site.baseurl }}">
+</head>
+
+
+<body class="gallery">
+
+  <section id="content" role="main">
+    <div class="wrapper">
+
+      <h2>{{page.inicio}}</h2>
+      <center><p>GALERIA 3</p></center>          
+      <br/>
+
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">
+
+        {% for image in page.images %}
+
+        <figure class="gallery-item">
+          <figure class="effect-selena">
+            <header class='gallery-icon'>
+
+              <a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+                <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+
+            </header>
+            <figcaption class='gallery-caption'>
+              <div class="entry-summary" style="color: orange">
+                <h1>{{image.gallery-name}}</h1>
+                <h3>{{image.gallery-author}}</h3>
+              </div>
+            </figcaption>
+          </figure>
+        </figure>
+
+        {% endfor %}
+
+      </div>
+
+    </div><!-- END .wrapper -->
+  </section>
+
+  <br>
+
+  <h6>
+    <p>&copy Todos os direitos reservados aos autores </p>
+  </h6>
+
+  <!-- jQuery -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+</body>
+
+</html>

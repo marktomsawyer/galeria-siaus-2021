@@ -1,0 +1,78 @@
+# Site settings
+title: SIARTERIA
+email: "siaus2@ufsj.edu.br"
+description: "Galeria Virtual do 2º SIAUS | 2021"
+#url: "https://sunbliss.github.io"
+baseurl: "/galeria-siaus-2021"
+facebook_username: "siaus2021"
+#twitter_username: ""
+instagram_username: "siaus2021"
+#github_username:  ""
+#deviantart_username: ""
+#flickr_username: ""
+#discus_shortname: ""
+share: true
+
+# Owner/author information
+owner:
+  name: 2º SIAUS 2021 | PIPAUS | UFSJ
+  avatar: avatar.png
+  favicon: favicon.ico
+  info: Exposição Virtual 
+
+# Settings for comments helper
+# Set 'provider' to the comment provider you want to use. (i.e.  Disqus, Intense Debate, livefyre, or Facebook Comments)
+# Set 'provider' to false to turn commenting off globally.
+#Set 'provider: false' to disable comments globally.
+# Disable comments for individual pages/posts by specifying 'comments: false' in the page/post YAML Front Matter.
+#
+#comments :
+#  provider : disqus
+#  disqus :
+#    short_name : ""
+
+# Internal nav
+nav:
+  - INÍCIO: "/galeria-siaus-2021/"    
+  - GALERIA 1: "/galeria-siaus-2021/galeria-1/" 
+  - GALERIA 2: "/galeria-siaus-2021/galeria-2/" 
+  - GALERIA 3: "/galeria-siaus-2021/galeria-3/" 
+  - GALERIA 4: "/galeria-siaus-2021/galeria-4/"   
+#  - SOBRE NÓS: "/galeria-siaus-2021/sobre/" 
+  
+    
+# All translation keys
+translations:
+ # 404.html
+  permalink: "/404.html"
+
+# Server
+destination:      	 ./_site
+port:             	 4000
+
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+#paginate: 5
+
+gems: 
+ - jekyll-paginate
+
+plugins:
+  - jekyll-paginate
+
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+# SiteMap
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/writing/"
+    change_frequency_name: "change_frequency"
+    priority_name: "priority"

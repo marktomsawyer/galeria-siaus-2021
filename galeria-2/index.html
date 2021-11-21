@@ -1,0 +1,166 @@
+---
+layout: page-galeria
+title: ""
+description: "Galeria Virtual do 2º SIAUS | 2021"
+active: gallery
+header-img: "img/bg-galeria-2.png"
+inicio: 
+images:
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/arte-na-serra/
+   gallery-name: "Arte na serra - para não queimar o futuro"
+   gallery-author: 
+
+ - image_path: /gallery/albums/o-jardim-depois-do-fim.jpg
+   gallery-folder: /gallery/o-jardim-depois-do-fim/
+   gallery-name: "O Jardim Depois Do Fim" 
+   gallery-author: 
+
+ - image_path: /gallery/albums/caminho-de-vagalume.jpg
+   gallery-folder: /gallery/caminho-de-vagalume/
+   gallery-name: "Caminho De Vagalume"
+   gallery-author: 
+
+ - image_path: /gallery/albums/poros.jpg
+   gallery-folder: /gallery/poros/
+   gallery-name: "Poros"
+   gallery-author: 
+
+ - image_path: /gallery/albums/urbanidades-sanjoanenses.jpg
+   gallery-folder: /gallery/urbanidades-sanjoanenses/
+   gallery-name: "Urbanidades Sanjoanenses"
+   gallery-author: 
+
+ - image_path: /gallery/albums/legado-o-design-do-futuro.jpg
+   gallery-folder: /gallery/legado-o-design-do-futuro/
+   gallery-name: "Legado: O Design Do Futuro" 
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/corpo-e-mudancas-climaticas/
+   gallery-name: "Corpo e Mudanças Climáticas - a casa caindo"
+   gallery-author: 
+
+ - image_path: /gallery/albums/pari-passu.jpg
+   gallery-folder: /gallery/pari-passu/
+   gallery-name: "Pari Passu" 
+   gallery-author: 
+
+ - image_path: /gallery/albums/o-marasmo-dos-pastos.jpg
+   gallery-folder: /gallery/o-marasmo-dos-pastos/
+   gallery-name: "O Marasmo dos Pastos" 
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/crossfut-o-futebol-reinventado-em-minas-gerais/
+   gallery-name: "CROSSFUT: o futebol reinventado em Minas Gerais"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/estudos-cores-de-buda-e-oxum-para-iemanja/
+   gallery-name: "Estudos - Cores de Buda e Oxum para Iemanjá"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/enquanto-se-cata-o-feijao/
+   gallery-name: "Enquanto se cata o feijão"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/fururo-o-saber-da-humanidade/
+   gallery-name: "Futuro (?) O Saber da Humanidade"
+   gallery-author: 
+
+ - image_path: /gallery/albums/video.jpg
+   gallery-folder: /gallery/sinogeno/
+   gallery-name: "Sinógeno"
+   gallery-author: 
+
+ - image_path: /gallery/albums/performance-cade-as-arvores.jpg
+   gallery-folder: /gallery/performance-cade-as-arvores/
+   gallery-name: "Performance Art - 'Cadê As Árvores Que Estavam Aqui?'"
+   gallery-author: 
+
+ - image_path: /gallery/albums/paisagens-urbanas-distopicas.jpg
+   gallery-folder: /gallery/paisagens-urbanas-distopicas/
+   gallery-name: "Paisagens Urbanas Distópicas"
+   gallery-author: 
+ 
+
+ 
+ 
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+  <link rel="stylesheet" href="{{ "/css/selena.css" | prepend: site.baseurl }}">
+</head>
+
+
+<body class="gallery">
+
+  <section id="content" role="main">
+    <div class="wrapper">
+
+      <h2>{{page.inicio}}</h2>
+      <center><p>GALERIA 2</p></center>          
+      <br/>
+
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">
+
+        {% for image in page.images %}
+
+        <figure class="gallery-item">
+          <figure class="effect-selena">
+            <header class='gallery-icon'>
+
+              <a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
+                <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+
+            </header>
+            <figcaption class='gallery-caption'>
+              <div class="entry-summary" style="color: orange">
+                <h1>{{image.gallery-name}}</h1>
+                <h3>{{image.gallery-author}}</h3>
+              </div>
+            </figcaption>
+          </figure>
+        </figure>
+
+        {% endfor %}
+
+      </div>
+
+    </div><!-- END .wrapper -->
+  </section>
+
+  <br>
+
+  <h6>
+    <p>&copy Todos os direitos reservados aos autores </p>
+  </h6>
+
+  <!-- jQuery -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+</body>
+
+</html>

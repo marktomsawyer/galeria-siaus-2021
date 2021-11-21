@@ -1,0 +1,117 @@
+---
+layout: page-terra
+title: "BLOCO AR"
+description: "V MOSTRA VESTÍGIOS | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-bloco-ar.png"
+album-title: "RES PIRO"
+author: "Jéssica Felipe Tavares <br> Beatriz Mendes de Melo"
+palavras-chave: "<b>PALAVRAS-CHAVE:</b> PANDEMIA, DANÇA, MEMÓRIA, MULHERES"
+hashtags: "#res_piro #mostravestigios #pipaus #ufsj"
+ficha-tecnica: "<b>Ficha técnica: </b>Foi utilizado o próprio celular para as gravações, da bailarina ou membro da família. 
+<br>
+A compilação e o roteiro foram realizados de modo remoto pelas autoras da obra, e a edição realizada pelo programa Sony Vegas. 
+<br>
+Obra artística realizada pelo grupo Fios de Memória
+"
+
+images:
+- image_path:
+copyright: ©
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+    <meta content="charset=utf-8">
+</head>
+
+<body>
+    <section id="content" role="main">
+        <div class="wrapper">
+            <br><br>
+            <h2>{{page.album-title}}</h2>
+            <h3 class="author">{{page.author}}</h3>
+            <br>
+
+
+            <p>
+                Grupo Fios de Memória em RES PIRO. 
+                
+                “É dedicado ao filme às mulheres que encontram um mundo na sua casa durante o
+                isolamento social”. Compõe a proposta, revelando uma terceira idade que reinventa e acolhe a dança como respiro. 
+                </p><p>
+                Auto
+                filmagem do grupo Fios de Memória em aulas de dança por videoconferência, onde experimentam um olhar delirante do espaço
+                da casa e do corpo mapeado, compondo um mosaico dançante no ciberespaço. 
+            </p><p>
+                Música gentilmente cedida por Micah, artista,
+                cantora e compositora da Zona Oeste carioca. 
+            </p><p>
+                Conheça <a href="https://open.spotify.com/track/5pDzg4">aqui</a> 
+
+            </p>
+
+            <p class="palavras-chave">{{page.palavras-chave}}</p>
+            <p class="hashtags">{{page.hashtags}}</p>
+
+
+            <!-- VIDEO -->
+            <div class="h_iframe">
+                <iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/sVcDKygWWeE" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+        </div><!-- END .wrapper -->
+    </section>
+    <br>
+    <p class="palavras-chave">{{page.ficha-tecnica}}</p>
+
+    <br>
+
+    <!-- jQuery -->
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- include image popups -->
+    <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('a.popup').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+                },
+                image: {
+                    titleSrc: function (item) {
+                        return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+                    }
+                }
+                // other options
+            });
+        });
+    </script>
+
+    <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+    <!-- include Masonry -->
+    <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+    <!-- include mousewheel plugins -->
+    <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+    <!-- include carousel plugins -->
+    <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+    <!-- include svg line drawing plugin -->
+    <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+    <!-- include custom script -->
+    <script src="{{ site.baseurl }}/js/scripts.js"></script>
+    <!-- Modernizr -->
+    <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>
