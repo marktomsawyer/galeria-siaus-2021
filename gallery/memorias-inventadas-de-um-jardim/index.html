@@ -1,0 +1,143 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Flávia Fábio"
+bio: "<b>Flávia Fábio</b> é artista visual, doutoranda em Poéticas Visuais na Unicamp. <br>
+ Em sua pesquisa, explora a paisagem
+cotidiana, tendo o seu jardim como ponto central, utilizando as plantas como matrizes, registrando seus desenhos,
+texturas e volumes em suportes variados, por meio das técnicas da monotipia, da frotagem, da cologravura e da cerâmica.
+Tanto os processos quanto os resultados de alguns trabalhos remetem a um levantamento arqueológico do jardim, que busca
+preservar a memória deste lugar e, de alguma forma, estender a vida de suas plantas.
+<br>
+Atua, também, como docente em cursos de artes e design e desenvolve projetos na área de design gráfico.
+<br>
+Dentre as exposições que participou destacam-se: <br> Habitar o Ar – coletiva (Casa de Eva – Campinas/SP, 2021); 
+<br>
+Memórias
+inventadas de um jardim - individual (GAIA - Galeria do Instituto de Artes/Unicamp - Campinas/SP, 2021); 
+<br> Memória, lugar
+y paisaje: una lectura gráfica - coletiva (Universidad de Antioquia - UdeA, Medellín/Colômbia, 2019); 
+<br> Jardim – coletiva
+(AT|AL + 609, Campinas-SP, 2017 e CCUFSJ – São João del-Rei/MG, 2018); 
+<br>
+Conjunções: artista/professor – coletiva (Galeria
+Faal - Limeira, SP, 2018); Artista | Professor | Propositor – coletiva (Museu Major José Levy – Limeira/SP, 2015;
+<br>  MAC –
+Americana/SP, 2015;
+<br> CCUFSJ - São João del-Rei/MG, 2017)."
+
+rede-social: "https://www.iar.unicamp.br/gaia/a-galeria/exposicoes-anteriores/memorias-inventadas-de-um-jardim/"
+titulo-da-obra: "Memórias Inventadas de um jardim"
+resumo-da-obra: "<p>Nesta proposta selecionei alguns trabalhos da exposição 'Memórias inventadas de um jardim' apresentados
+de 22 de março a 18 de abril de 2021, no ambiente GAIA Virtual, da Galeria do Instituto de Artes (GAIA) da Unicamp,
+resultante da pesquisa de doutorado em Poéticas Visuais, desenvolvida junto ao Instituto de Artes da Unicamp.
+</p><p>
+Tendo a paisagem cotidiana e o jardim da casa como local de imersão, as espécies vegetais ali presentes assumiram um
+protagonismo, deixando de ser modelos para observação, sendo elas próprias como matrizes para diversas técnicas
+reprodutivas como cologravura, monotipia, frottage e cerâmica, , atuando como coautoras no processo de criação.</p>"
+
+
+images:
+ - image_path: /gallery/archive/memorias-inventadas-de-um-jardim/memorias-inventadas-de-um-jardim-flavia-fabio-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/memorias-inventadas-de-um-jardim/memorias-inventadas-de-um-jardim-flavia-fabio-02.jpg   
+   copyright:     
+
+ - image_path: /gallery/archive/memorias-inventadas-de-um-jardim/memorias-inventadas-de-um-jardim-flavia-fabio-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/memorias-inventadas-de-um-jardim/memorias-inventadas-de-um-jardim-flavia-fabio-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/memorias-inventadas-de-um-jardim/memorias-inventadas-de-um-jardim-flavia-fabio-05.jpg   
+   copyright:   
+
+   
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>     
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <br>
+  <br>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

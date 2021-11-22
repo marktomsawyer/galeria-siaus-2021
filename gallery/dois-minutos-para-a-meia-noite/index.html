@@ -1,0 +1,101 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Luciana Beatriz Chagas"
+bio: "Artista plástica, ceramista e professora.
+Possui doutorado e pós-doutorado em Artes Visuais pela Universidade de São Paulo. <br>
+Atualmente é professora adjunta da Universidade Federal de São João del Rei (UFSJ), no curso de Artes Aplicadas com
+ênfase em cerâmica e no Pipaus.<br>
+Em cerâmica, ensina criação de esmaltes, cores na cerâmica, queimas e processos criativos para o design do objeto
+cerâmico, tanto utilitário como decorativo.<br>
+Em seu ateliê, aplica técnicas de modelagem figurativa, desenho, pintura, impressões e decalques cerâmicos para criar
+obras narrativas que versam sobre as mudanças climáticas, a extinção de espécies e outros desafios do Antropoceno."
+rede-social: "https://www.instagram.com/luciana.ceramica/"
+titulo-da-obra: "Dois Minutos para a Meia-noite"
+resumo-da-obra: "O vídeo apresenta, em diversos pontos de vista, a escultura 'Dois minutos para a meia-noite', uma peça
+figurativa em cerâmica de alta temperatura, que materializa múltiplas narrativas contemporâneas sobre iminentes ameaças
+à nossa civilização.<br><br> A partir do manifesto do Boletim dos Cientistas Atômicos publicado em 2019, no qual o 'Relógio do
+Juízo Final' aparece pelo segundo ano consecutivo ajustado a dois minutos para a meia-noite, desenvolvi plasticamente as
+ameaças presentes no manifesto, como extinção, ameaça nuclear, emergência climática, crise de refugiados, incêndios
+florestais e guerras.<br><br> A escultura apresenta a forma geral de um cogumelo, como lembrança à ameaça nuclear, razão pela
+qual o boletim dos cientistas atômicos foi criado em 1947.<br><br> Hoje, em 2021, o relógio encontra-se ajustado em 100 segundos
+para a meia-noite."
+link-video: "https://www.youtube.com/embed/a8TkTzMYaEM"
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

@@ -13,8 +13,8 @@ ESTRUTURA JEKYLL PHOTORAMA – SIARTERIA - GALERIA SIAUS
 (HOME)
 /index.html 
 
-(BLOCO)
-/nome-do-bloco
+(GALERIA)
+/galeria-x
     /index.html 
 
 (CAPA-TRABALHO)

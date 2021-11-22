@@ -1,0 +1,110 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Cleisson José"
+outro-autor: "Virginia Dias Rodrigues"
+bio: "Performer, professor de música, flautista, pesquisador... <br> Natural da cidade de Barão de Cocais (MG), possui
+graduação em Música pela Universidade Federal de São João del rei (UFSJ). <br> Busca pesquisar possibilidades da performance
+musical através do contato com outras manifestações artísticas. <br> Além disso, observar a corporeidade, a sensibilidade e a
+criação na prática musical como um elemento base e transformador do aprendizado e da performance. <br> Atualmente integra o
+Programa Interdepartamental de Pós-graduação Interdisciplinar em Artes, Urbanidades e Sustentabilidade (PIPAUS) da
+UFSJ."
+rede-social: "https://cleissonj4.wixsite.com/otremeomoribundo"
+titulo-da-obra: "O trem e o moribundo"
+resumo-da-obra: "<p>Em 'O trem e o moribundo', realizado por Cleisson José e Virginia Rodrigues, discute-se sobre a
+objetificação do corpo na modernidade, o genocídio de povos na história brasileira, a estabilidade financeira, a
+alienação: o jogo da sociedade do capital. 
+</p><p>
+Trata-se de uma sessão de fotos e vídeos como parte de experimentações
+corpo-expressivas realizadas em 2021, na cidade de Barão de Cocais. 
+</p><p>Buscamos externalizar a complexidade da população
+cocaiense e região diante a formas disseminadas de trabalho, voltadas à relação senhor e escravo e à produção industrial
+mineradora.
+</p><p> Criticamos a dificuldade da política e das empresas locais em oferecer e apoiar maneiras de vida menos
+focadas no lucro e na exploração de pessoas. 
+</p><p></p>Nesta história, o moribundo pede tempo! 
+</p><p>
+Ele sabe que sozinho não consegue
+livrar-se deste tudo que carrega desde tempos coloniais antigos.
+</p><p> Precisa de algo que o ajude a tornar-se um vivo, nem
+que seja por um breve instante.</p>"
+link-video: "https://www.youtube.com/embed/0S10D38qVOM"
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

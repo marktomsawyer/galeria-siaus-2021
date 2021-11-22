@@ -1,0 +1,118 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+
+nome: "Camila Ruas de Paula"
+bio: "Me chamo Camila Ruas, nasci em 1996 na cidade de Governador Valadares e desde o ano de 2010 me descobri apaixonada
+pela fotografia através do trabalho do Sebastião Salgado. E apenas no ano de 2014 que tive a oportunidade de desenvolver
+projetos fotográficos com o objetivo de retratar as relações socioespaciais que se desenvolvem em nosso território."
+rede-social: "https://www.instagram.com/dasruas96/"
+titulo-da-obra: "Vale Nada"
+resumo-da-obra: "O projeto de Fotografia que recebe o título 'Vale Nada', foi desenvolvido durante um trabalho de campo
+nas cidades de Paracatu - MG e Bento Rodrigues - MG após o rompimento da barragem em 2016, promovido pelo curso de
+graduação Geografia Bacharel - UFSJ. <br><br> Através das imagens apresentadas, podemos observar que o presente trabalho, tem
+como objetivo evidenciar as problemáticas que se desenvolvem como consequência à exploração massiva e não sustentável
+dos recursos naturais e sociais que o sistema capitalista impõe cada vez mais."
+
+images:
+ - image_path: /gallery/archive/vale-nada/vale-nada-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/vale-nada/vale-nada-02.jpg   
+   copyright:   
+   
+ - image_path: /gallery/archive/vale-nada/vale-nada-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/vale-nada/vale-nada-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/vale-nada/vale-nada-05.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

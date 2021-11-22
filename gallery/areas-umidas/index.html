@@ -1,0 +1,120 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Raphael Morone"
+bio: "Raphael Morone é artista visual e escritor desde 2008 e atua entre o desenho e a pintura, a palavra e o poema. <br> É
+formado em Design Gráfico pela São Judas Unimonte (2008) e Licenciatura em Artes Visuais pela Escola de Design da UEMG
+(2018). <br>Em sua condição de migrante, pesquisa os vestígios da presença humana e a materialidade e a temporalidade das
+coisas na paisagem. <br>No momento, realiza uma pesquisa artística sobre as áreas úmidas do cerrado mineiro e cuida dos
+últimos detalhes para o lançamento de seu primeiro livro, Pãozin de Cará: entre o porto e as montanhas.<br> Vive e trabalha
+em trânsito entre a morada atual, Belo Horizonte, e Santos, sua terra natal."
+rede-social: "http://instagram.com/raphaelmorone"
+titulo-da-obra: "Áreas úmidas"
+resumo-da-obra: "As cinco pinturas fazem parte de uma pesquisa artística acerca das áreas úmidas, ecossistemas
+artificiais e naturais de transição ou conexão entre áreas terrestres e aquáticas.<br><br> Esses ambientes, pela condição
+intermitente, oferecem um campo amplo para a pesquisa da condição de migrante e seu olhar construído de subjetividades.<br><br>
+Nesse processo, retrata-se vestígios da ação do tempo, como a passagem de um curso d'água e a configuração espacial após
+a ação humana a partir do conceito de paisagem enquanto construção cultural. "
+
+images:
+ - image_path: /gallery/archive/areas-umidas/areas-umidas-raphael-morone-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/areas-umidas/areas-umidas-raphael-morone-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/areas-umidas/areas-umidas-raphael-morone-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/areas-umidas/areas-umidas-raphael-morone-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/areas-umidas/areas-umidas-raphael-morone-05.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

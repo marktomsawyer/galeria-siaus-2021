@@ -1,0 +1,121 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Natalia Roberta Chagas Nogueira"
+bio: "Formada em Ciências Biológicas pela UFSJ em 2018. <br> Idealizadora do Nativa, projeto fotográfico que visa registrar
+mulheres em busca de autoconhecimento, Natalia Chagas já fotografou aproximadamente 200 mulheres em São João Del Rei e
+região. <br>Atualmente vem se especializando em fotografia para mulheres e fotografia terapêutica com fotografas e
+arte-terapeutas.<br> Realizou em 2019 a exposição 'CRUA' no Bar Bartêlie.<br> Em 2021 foi contemplada no edital da Assembléia
+Legislativa de Minas Gerais ao lado de outras 59 mulheres.<br> É uma das fundadoras do Coletivo Estria, coletivo de
+fotografas de SJDR."
+rede-social: "https://www.instagram.com/nativa.projeto/"
+titulo-da-obra: "A poluição da alma selvagem"
+resumo-da-obra: "Realizada em ambientes degradados em São João Del Rei, MG.<br><br> Inspirado no conto La Llorona de Mulheres
+que correm com os lobos, de Clarissa Pinkola, são retratos do arquétipo da mulher selvagem que perdeu sua vida criativa.<br><br>
+Fez-se um paralelo entre o rio e a mulher. <br><br>O rio interno que corre dentro de todos é a fluidez da criatividade, o
+alimento para uma vida autêntica e suas inúmeras potencialidades.<br><br> Quando o rio interno é contaminado ou represado, a
+mulher perde a vitalidade, a beleza e a libido. <br><br>Nossa vida criativa é afetada pelos ambientes que estamos inseridas? As
+degradações ambientais que permeiam os centros urbanos poderiam ser um reflexo das degradações internas que vivenciamos?<br><br>
+Clarissa afirma que 'um único ato de criação tem o potencial de alimentar um continente' então, faz-se necessário a
+auto-observação e autoconhecimento para o questionar: como anda a saúde do rio que corre em mim?"
+
+images:
+ - image_path: /gallery/archive/a-poluicao-da-alma-selvagem/a-poluicao-da-alma-selvagem-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/a-poluicao-da-alma-selvagem/a-poluicao-da-alma-selvagem-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/a-poluicao-da-alma-selvagem/a-poluicao-da-alma-selvagem-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/a-poluicao-da-alma-selvagem/a-poluicao-da-alma-selvagem-04.jpg   
+   copyright:   
+ 
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

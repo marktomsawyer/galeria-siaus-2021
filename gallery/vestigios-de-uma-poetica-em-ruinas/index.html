@@ -1,0 +1,117 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Thais Andressa"
+bio: "Jornalista, fotógrafa e pesquisadora. Segue a linha da Fotografia Urbana, Fotografia de Natureza e Fotojornalismo,
+além das reflexões poéticas."
+rede-social: "https://www.instagram.com/thais.andressa_art/?hl=pt-br"
+titulo-da-obra: "Vestígios de uma poética em ruínas"
+resumo-da-obra: "Todo espaço guarda uma memória. <br><br> Quando são observadas as ruínas, há uma visão também sobre a vida e as
+formas de ocupação de tais espaços. De toda ocupação, sempre fica uma marca, um traço e uma estética, do que foi e do
+que se tornará.<br><br> A natureza em contraste com as ruínas, devolve a vida, se desenvolve compondo uma paisagem pitoresca. A
+natureza ressignifica tudo a sua volta. <br><br>O trabalho fotográfico foi desenvolvido a partir do Preto & Branco, justamente
+para promover uma reflexão sobre a necessidade de ressignificação dos espaços e do equilíbrio, uma palavra potente,
+poética e nem sempre valorizada. Talvez, a arte seja o caminho. "
+
+images:
+ - image_path: /gallery/archive/vestigios-de-uma-poetica-em-ruinas/vestigios-de-uma-poetica-em-ruinas-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/vestigios-de-uma-poetica-em-ruinas/vestigios-de-uma-poetica-em-ruinas-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/vestigios-de-uma-poetica-em-ruinas/vestigios-de-uma-poetica-em-ruinas-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/vestigios-de-uma-poetica-em-ruinas/vestigios-de-uma-poetica-em-ruinas-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/vestigios-de-uma-poetica-em-ruinas/vestigios-de-uma-poetica-em-ruinas-05.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

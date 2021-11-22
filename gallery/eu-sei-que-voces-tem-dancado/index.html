@@ -1,0 +1,106 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Rebeca Lima"
+bio: "Sou mestranda em Artes, Urbanidades e Sustentabilidade pela Universidade Federal de São João Del Rei, minha
+pesquisa hoje tem ênfase na arte que acontece na cidade, nos encontros, desencontros e poéticas da urbe.
+. <br>
+. <br>
+Também sou bacharela e licenciada em Dança pela Universidade Federal de Viçosa, durante minha graduação trabalhei com
+arte-educação, educação em sistema prisional, performance e direitos humanos, dentre outras questões do corpo e das
+possibilidades desse.
+. <br>
+. <br>
+Meu trabalho hoje é multifacetado, sou fazedora das multiplicidades em arte e meu caminho perpassa pela dança,
+fotografia, texto, performance e audiovisual
+. <br>
+. <br>
+
+Além disso, faço um bolo de cenoura ótimo, atuo como produtora cultural e pesquisadora-curiosa do samba jazz."
+rede-social: "https://www.instagram.com/rebecalima_____/"
+titulo-da-obra: "Eu Sei Que Vocês Têm Dançado"
+resumo-da-obra: "<p>Eu Sei Que Vocês Têm Dançado é uma videodança-sobrevivência que foi composta nos primeiros dias da
+pandemia.</p><p>
+Foi preciso reeiventar a dança e a casa, assim como hoje é preciso reeinventar o mundo em que vivemos. </p><p>
+Com trilha de Guilherme Scardini, Eu Sei Que Vocês Têm Dançado é sobre as pequenas frestas de sobrevivência nesse
+mundo-caos."
+link-video: "https://www.youtube-nocookie.com/embed/_8xkU4KwA_M"
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

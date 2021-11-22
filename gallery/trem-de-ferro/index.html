@@ -1,0 +1,95 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Bruno Amarante"
+bio: "Professor do Curso de Artes Aplicadas da UFSJ. Doutor, Mestre e Bacharel em artes pela Escola de Belas Artes da
+UFMG. Artista plástico/ceramista, tem como elementos de pesquisa o território, o humano, o tempo e a memória,
+trabalhando em suportes como a cerâmica, o ferro, a terra, fotografia, vídeo e a música. Tem em seu currículo exposições
+individuais, coletivas e salões de arte. <br> É baterista e integrante da banda SAGUAROS."
+rede-social:
+titulo-da-obra: "TREM DE FERRO"
+resumo-da-obra: "O vídeo Trem de Ferro, 2'40''', de 2016, é fruto da minha pesquisa de doutorado e apresenta a montagem em
+sequência de várias imagens fotográficas que realizei das paisagens minerárias do Quadrilátero Ferrífero de MG. Imagens
+agentes, importantes para a pesquisa teórica e artística da pesquisa. <br><br>
+O vídeo se coloca como representação do deslocamento da paisagem, que sobre trilhos, vai chegar ao porto depois
+atravessar os oceanos. Nas imagens das paisagens arruinadas o registro da herança deixada para trás."
+link-video: "https://www.youtube.com/embed/MxhlPupVqTw"
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

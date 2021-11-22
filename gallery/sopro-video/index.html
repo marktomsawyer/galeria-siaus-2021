@@ -1,0 +1,101 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+
+nome: "Bruno Schuch"
+bio: "Artista visual com poética em foto e vídeo performance, voltada para questões de corpo e paisagem. <br> Bacharel em
+artes visuais pela Universidade Federal de Pelotas, 2019; bacharelando em Artes Aplicadas com Ênfase em Cerâmica pela
+Universidade Federal de São João del Rei, desde 2020. <br>Em seus trabalhos busca propor diferentes olhares sobre possíveis
+relações entre o ser humano e a natureza, tendo como temas atravessadores as noções de fragilidade e impermanência."
+rede-social:
+titulo-da-obra: "Sopro"
+resumo-da-obra: "Videoperformance em que cubro meu corpo com a poeira de uma estrada e busco lugar junto à vegetação que
+a margeia, também coberta pela poeira da mesma.<br><br>
+Ação realizada em São João del Rei, com duração de uma hora, registrada em vídeo digital, sendo este um recorte de 6
+minutos e trinta e cinco segundos.<br><br>
+Agarrei-me à terra da estrada, joguei-a sobre meu corpo, deixei que caísse sobre mim, esfreguei-a para que permanecesse.
+Pintado de ocre, caminhei para junto daquele pedaço de mato que resistia entre a estrada e a cerca.<br><br> Espaço entre, dois
+domínios humanos, o dito público e o dito privado. <br><br>Esgueirei-me entre galhos buscando um lugar comum, um lugar onde
+estar, onde ser. <br><br>Neste trabalho, invisto meu corpo sobre a natureza, buscando propor um olhar possível sobre esse
+possível lugar. <br><br>De presença, de pertença. <br><br>E para talvez dizer: 'memento, homo, quia pulvis es et in pulverem
+reverteris'."
+link-video: "https://www.youtube.com/embed/NpmvtljD6jk" 
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

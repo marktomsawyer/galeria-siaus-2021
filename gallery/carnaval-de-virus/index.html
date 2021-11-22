@@ -1,0 +1,118 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Tereza Raquel Frazão"
+bio: "Nascida em São João del-Rei, Minas Gerais. <br>
+Possui formação em nível Técnico em Música, com habilitação em piano/flauta doce pelo Conservatório Estadual de Música
+Padre José Maria Xavier, em 2005. Graduada em Bacharelado em Artes Aplicadas com ênfase em cerâmica pela UFSJ, em 2013. <br>
+Concluiu licenciatura plena em Pedagogia pela UFSJ, em 2019. Atualmente, aluna regularmente matriculada do Programa
+Interdepartamental de Pós-Graduação Interdisciplinar em Artes, Urbanidades e Sustentabilidade, PIPAUS da Universidade
+Federal de São João del-Rei. <br>
+Trabalha como arte educadora, ceramista e artista visual." 
+rede-social:
+titulo-da-obra: "Carnaval de Vírus"
+resumo-da-obra: "<p>Carnaval de Vírus é a forma lúdica que encontrei para mostrar o Coronavírus festejando em cima das
+mazelas humanas, brinca e dança pelas ruas desertas da cidade em lockdown, invade espaços urbanos, toma o poder sobre as
+coisas e pessoas e está sempre a procura de vítimas que duvidam da sua presença e da sua sagacidade.
+</p><p>
+Ele se aloja nos organismos humanos levando a falta de ar e infecções, o oxigênio tornou-se uma necessidade vital
+disputado a preço de ouro pelos homens.
+</p><p></p>
+Adereços necessários para camuflar o vírus que está à procura de foliões desavisados, a máscara sobre rosto passa a ser
+a fantasia mais procurada, podendo ser preta branca, colorida, o álcool gel serve para embebedar as mãos da
+contaminação, água e sabão limpam a sujeira que esse vírus tem deixado sobre os povos do planeta.</p>"
+
+
+images:
+ - image_path: /gallery/archive/carnaval-de-virus/carnaval-de-virus-01.jpg   
+   copyright:   
+   
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <br>
+  <br>
+  
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

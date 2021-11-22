@@ -1,0 +1,118 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Flavia Freitas"
+bio: "Sou Flávia, Graduanda em Arquitetura e Urbanismo pela UFSJ. Atualmente sou bolsista no projeto de criação
+artística Estudantes Mães Resistem e mãe do Luiz de 3 anos. <br> Militante por um mundo inclusivo e universal. <br>
+Já cursei zootecnia por 3 anos, entretanto não concluí a graduação, durante este período fui assessora de Marketing na
+Empresa Júnior Agrobio."
+rede-social: 
+titulo-da-obra: "A CONTRUÇÃO DOS ESPAÇOS PÓS PANDEMIA"
+
+resumo-da-obra: "Os trabalhos foram feitos na disciplina de OFICINA II, tinham como plano de fundo um mundo que viveria
+constantemente em pandemia. <br> <br>
+A colagem Presa em um universo de possibilidades foi criada para expressar um sentimento meu com a pandemia, me via
+presa porém conectada com todos, um sentimento ambíguo. <br> <br> Naquela época ainda estava entendendo como iríamos nos adaptar
+às novas relações interpessoais por meio das redes. <br> <br>
+O vídeo Maquete Processual buscou mostrar como a abertura de paredes e janelas interferiria no espaço e em quem/o que
+ali estivesse.  <br> <br>Com a pandemia passamos a vivenciar mais os espaços da nossa casa e tudo o que a habita. E novas relações
+com os espaços foram criadas. <br> <br>
+A colagem Alegoria da Caverna pós COVID 19 faz uma alusão à alegoria da caverna de platão.  <br> <br>Buscando também questionar a
+teoria do conhecimento, linguagem, educação e sobre um estado hipotético nos tempos atuais."
+
+images:
+ - image_path: /gallery/archive/a-construcao-dos-espacos-pos-pandemia/a-construcao-dos-espacos-pos-pandemia-flavia-freitas-01.jpg
+   copyright:
+
+ - image_path: /gallery/archive/a-construcao-dos-espacos-pos-pandemia/a-construcao-dos-espacos-pos-pandemia-flavia-freitas-02.jpg
+   copyright:
+
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+</head>
+
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>
+      <p class="hashtags">{{page.rede-social}}</p>
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">
+        {% for image in page.images %}
+        <figure class="gallery-item">
+          <header class='gallery-icon'>
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

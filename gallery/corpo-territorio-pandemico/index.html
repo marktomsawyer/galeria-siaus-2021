@@ -1,0 +1,99 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Lari"
+bio: "Graduada em Imagem e Som pela UFSCar (2019), aspirante a Produtora Cultural, bissexual e jovem-mãe, é bolsista
+pela PUC-Campinas, cursando o segundo semestre do Mestrado em Linguagens, Mídia e Artes."
+rede-social:
+titulo-da-obra: "Corpo-território Pandêmico"
+resumo-da-obra: "Este vídeo faz parte de meu processo em autonarrativa para o projeto de pesquisa no mestrado em
+Linguagens, Mídia e Artes pela PUC-Campinas com bolsa CAPES modalidade I. <br><br>
+No projeto intitulado atualmente como IDENTIDADES [DES][RE]TERRITORIALIZADAS: HETEROTOPIAS PANDÊMICAS, realizo
+perambulações por territórios virtuais, com fim de analisar questões de identidades de pessoas em dissidência da
+heteronormatividade, através de produções artísticas em relação ao conceito de [des][re]territorialização na cultura
+contemporânea, durante o período de pandemia por Covid-19, para responder à questão: Como a pandemia transforma os
+processos de [des][re]territorialização da população LGBTQIA+? Com enfoque regional numa cidade heterotópica do interior
+paulista, Americana/SP.<br><br>
+A realização do vídeo em parceria de Gunar Oliveira, vem deste processo de autonarrativa baseado no projeto, porém com o
+intuito de inscrição no edital da Lei Aldir Blanc 2021 pela prefeitura de Americana."
+link-video: ""
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

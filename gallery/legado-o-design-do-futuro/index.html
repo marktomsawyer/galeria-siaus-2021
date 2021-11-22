@@ -1,0 +1,117 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Silvia Reis"
+bio: "Fotógrafa e educomunicadora, Silvia Cristina dos Reis é mestra em Artes, Urbanidades e Sustentabilidade. <br> Possui
+bacharelado em Comunicação Social com habilitação em Jornalismo e licenciatura em Letras.  <br>Desde 2017 se dedica a
+pesquisar e fazer experimentações unindo arte, fotografia e comunicação.<br> Atualmente, é técnica do grupo de pesquisa
+GEPEducomufsj e integrante do Estria foto coletivo (https://www.instagram.com/stories/estria.fotocoletivo/)"
+rede-social: "https://www.instagram.com/stories/estria.fotocoletivo/"
+titulo-da-obra: "Legado: o design do futuro"
+resumo-da-obra: "O presente ensaio é composto de recortes feitos em diferentes momentos das minhas andanças
+contemplativas pelas cidades da região (Tiradentes, São João del-Rei e Santa Cruz de Minas). <br><br>
+O objetivo de reunir estes quadros é chamar atenção para o consumo e o descarte de objetos após perder a função de uso e
+como isso pode impactar a vida e a sustentabilidade do planeta. <br><br>Isso porque vejo a arte fotográfica como uma importante
+aliada para informar e sensibilizar a sociedade sobre a urgente necessidade de novas maneiras de pensar e agir para
+definir o design que queremos no futuro."
+
+
+images:
+ - image_path: /gallery/archive/legado-o-design-do-futuro/legado-o-design-do-futuro-silvia-reis-01.jpg
+   copyright:
+
+ - image_path: /gallery/archive/legado-o-design-do-futuro/legado-o-design-do-futuro-silvia-reis-02.jpg
+   copyright:
+
+ - image_path: /gallery/archive/legado-o-design-do-futuro/legado-o-design-do-futuro-silvia-reis-03.jpg
+   copyright:
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+</head>
+
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>
+      <p class="hashtags">{{page.rede-social}}</p>
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">
+        {% for image in page.images %}
+        <figure class="gallery-item">
+          <header class='gallery-icon'>
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>
+  <p>{{page.bio}}</p>
+  <br><br>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

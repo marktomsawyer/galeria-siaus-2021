@@ -1,0 +1,104 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"  
+
+nome: "Camila Nolasco dos Passos, Letícia Lara do Carmo; Mariana Silva Pereira"
+
+bio: "Camila Nolasco dos Passos (27), Letícia Lara do Carmo (25) e Mariana Silva Pereira (26), de Minas Gerais,
+graduadas em Arquitetura e Urbanismo pela Universidade Federal de São João del-Rei (UFSJ) e, atualmente, mestrandas do
+Programa Interdepartamental de Pós-Graduação Interdisciplinar em Artes, Urbanidades e Sustentabilidade (PIPAUS), se unem
+pela afinidade e pelo interesse em temáticas convergentes para desenvolver pesquisas e trabalhos artísticos que
+atravessam os campos da arquitetura, urbanismo, artes e produção audiovisual."
+rede-social: ""
+titulo-da-obra: "#pedalanaavenida: fragmentos de uma narrativa"
+resumo-da-obra: "Este vídeo foi uma produção audiovisual experimental que buscou discutir questões relacionadas à
+mobilidade urbana e escala humana, tendo como referência o trabalho desenvolvido na disciplina 'Arte, Cidade e
+Política', ministrada pela professora Adriana Nascimento, como parte do Programa Interdepartamental de Pós-graduação
+Interdisciplinar em Artes, Urbanidades e Sustentabilidade, no ano de 2020, sendo composto de uma narrativa textual e uma
+intervenção digital. <br><br>
+Na narrativa textual, as temáticas foram discutidas por meio da criação de uma reportagem fictícia, e, posteriormente,
+na intervenção digitação por meio de um breve experimento social. <br><br>Ambos foram inspirados pelo evento real 'Bike na
+Leite', realizado pelo curso de Arquitetura e Urbanismo (Universidade Federal de São João del-Rei), em 2015.<br><br> Dessa
+forma, a proposta para o vídeo foi da criação de uma narrativa audiovisual das experimentações realizadas, trazendo
+imagens e textos utilizados originalmente nos trabalhos, bem como novos materiais que complementam a narrativa
+pretendida pelas autoras."
+link-video: "https://www.youtube.com/embed/X07MwE8ed00"
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

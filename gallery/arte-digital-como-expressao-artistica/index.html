@@ -1,0 +1,120 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Helena Mongim"
+bio: "Sou Helena Mongim, moro em Vitória/ES. <br> Em 2017, entrei no curso de Arquitetura e Urbanismo na UFES e comecei a me
+envolver mais com a pintura e ilustração. <br> Nessa época, fiz um curso de Ilustração na Arcane Academia de Artes e
+participei do atelier de pintura acrílica do Attílio Colnago. <br> Desde então, venho estudando de forma mais independente,
+em paralelo à faculdade."
+rede-social: "https://www.instagram.com/helenamongim <br>  https://www.artstation.com/helenamongim"
+titulo-da-obra: "Arte Digital como Expressão Artística"
+resumo-da-obra: "<p>A arte digital está presente em várias áreas do nosso cotidiano e, com o avanço da tecnologia, muitas
+vezes não é possível diferenciar a estética de uma arte tradicional para uma digital. </p><p>  Possuo prática com tinta acrílica,
+mas minha principal produção é feita no computador. Há muitos benefícios em fazer pinturas em um meio digital,
+principalmente devido à facilidade de manipulação da imagem. </p><p> No meu trabalho, busco unir as duas áreas, utilizando os
+dois métodos e aproximando o processo do digital ao tradicional. </p><p> Nas imagens que aqui apresento, utilizei os programas
+Photoshop e Clip Studio Paint, com pincéis texturizados que se assemelham ao aspecto de um pincel físico, além de
+utilizar poucas camadas para aproximar esse processo de como seria se eu utilizasse uma tela ou papel, em que não há
+separação de camadas. </p><p>Minhas temáticas são, principalmente, relacionadas à representação feminina e ambientes de ficção
+e fantasia.</p>"
+
+images:
+ - image_path: /gallery/archive/arte-digital-como-expressao-artistica/arte-digital-como-expressao-artistica-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/arte-digital-como-expressao-artistica/arte-digital-como-expressao-artistica-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/arte-digital-como-expressao-artistica/arte-digital-como-expressao-artistica-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/arte-digital-como-expressao-artistica/arte-digital-como-expressao-artistica-04.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <br><br>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

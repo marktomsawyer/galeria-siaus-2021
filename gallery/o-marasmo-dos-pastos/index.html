@@ -1,0 +1,117 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+
+nome: "João V. Bessa"
+bio: "João V. Bessa é artista e jornalista cordeirense, nascido em 1997. <br> Jornalista formado pela UFSJ (2021), tem
+experiência como repórter, redator e colunista de Cultura & Arte, tendo colaborado com jornais em sua cidade natal e em
+São João del-Rei, além de ter atuado por dois anos em coberturas do Inverno Cultural.<br> Sua trajetória prematura na música
+começa aos 8 anos, por influência de seus pais e em especial de sua mãe.<br> Apresentou-se com a banda Echoes aos 15 anos,
+tendo suas primeiras experiências de palco e de composição. <br>Já em São João del-Rei, apresenta-se com a cantora Isis
+Ferreira desde 2020 e agora prepara o lançamento de seu primeiro EP, Sonhos em cinza, em novembro.<br>
+Sua relação com a poesia remonta ao início da adolescência, momento em que descobriu na expressão verbal um motivo para
+viver e perceber o mundo ao seu redor. <br>É na poesia que encontra vazão para os sentimentos que sempre afligiram seu corpo
+negro, mas também às emoções que motivam sonhos, desejos, prazeres e alegrias: uma ferramenta para desembrutecer o corpo
+acostumado a sentir-se como pedra e a negligenciar suas emoções. <br>Tem como principais influências Cruz e Sousa, Fernando
+Pessoa, Ferreira Gullar e Cecília Meireles."
+rede-social: "www.instagram.com/bessismos"
+titulo-da-obra: "O marasmo dos pastos"
+resumo-da-obra: "O poema O marasmo dos pastos foi escrito no banco de um carro em movimento, durante uma viagem entre os
+estados do RJ (onde nasci) e MG (onde resido). <br><br> Por ter crescido em Cordeiro, uma relação de encanto e admiração pela
+natureza dos morros, matas e bichos porque há uma reserva ambiental que atravessa o município. Uma relação afetiva, de
+pertencimento. <br><br>É um amor que vem das memórias criadas a partir de informações, mas também de imagens que carregam
+sentimentos. <br><br>Durante a viagem, realizada em setembro, as imagens dos pastos e de morros queimados pela gana
+latifundiária marcou as paisagens. <br><br>E por isso, justamente, decidi escrever esse poema, fazendo emergir da memória os
+sentimentos que tenho pela mata, deixando que as emoções dessas imagens aflorassem e tomassem conta do papel. <br><br> Quando se
+queima as matas, se sacrifica a fauna, a flora e o futuro em nome do lucro privado."
+
+images:
+ - image_path: /gallery/archive/o-marasmo-dos-pastos/o-marasmo-dos-pastos-joao-v-bessa.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

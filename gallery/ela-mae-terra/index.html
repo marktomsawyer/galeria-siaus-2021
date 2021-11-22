@@ -1,0 +1,117 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Andréa Coutinho"
+bio: "Doutorado em Estudos da Criança, área de Comunicação Visual e Expressão Plástica, pela Universidade do Minho
+(2010). Revalidação na Educação - UFJF (2012). Licenciatura em Educação Artística - Artes Plásticas pela Universidade
+Federal de Juiz de Fora (1988), Bacharelado em Artes, UFJF (2001). Professora de artes visuais aposentada do CAp João
+XXIII UFJF. <br> Artista visual, integrante do Coletivo Artistas Livres de economia criativa."
+rede-social: "@andreascoutinho67"
+titulo-da-obra: "ELA, mãe terra"
+resumo-da-obra: "Na série 'ELA, mãe terra', apresento uma série de fotografias de reentrâncias encontradas em árvores
+centenárias, resultados de minhas andanças solitárias em tempos de pandemia. <br><br>Nelas, é possível ver e sentir o colo do
+útero, a abertura da vagina, as vísceras, as camadas de folhas que formam um berço como a menstruação no útero. <br><br>Todas,
+analogias que podem fazer o olhar percorrer as formas encontradas nos elementos da natureza como o próprio corpo da
+mulher. <br><br>Em tempos tão difíceis, em que precisamos nos reconduzir à natureza como experiência de sobrevivência, foi nela
+que vi a mim mesma.<br><br> Reafirmei a necessidade de preservação como premissa para o hoje e provir.<br><br>
+ELA, mãe terra (tríptico), Técnica: Fotografia (celular), Suporte: digital, Ano de realização: 2021."
+
+images:
+ - image_path: /gallery/archive/ela-mae-terra/ela-mae-terra-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/ela-mae-terra/ela-mae-terra-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/ela-mae-terra/ela-mae-terra-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/ela-mae-terra/ela-mae-terra-04.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

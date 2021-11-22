@@ -1,0 +1,100 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Dayana Vieira de Rezende"
+outros-autores: "Ana Paula Garcia; Paulo Jarbas Cardoso da Silva; Lucivânia Pereira da Silva; Camila Carla de Meneses
+Silva; Keithy Hellen Pereira; Marcos Luan Cosme Barbosa"
+bio: "Formada em Artes Plásticas pela Universidade Braz Cubas, especialização em Mídias na Educação pela UFSJ, mestrando
+do PIPAUS e professora de Artes efetiva dos Municípios de Carandaí e Conselheiro Lafaiete."
+rede-social:
+titulo-da-obra: "Cadeira para quem?"
+resumo-da-obra: "Produzimos objetos, consumimos objetos, nos definimos a partir daqueles que usamos e também dos que
+deixamos de usar. <br><br>Objetos são históricos culturais, mudam suas características e funções de acordo com o momento, a
+situação, o lugar. <br><br>
+As cadeiras, hoje em dia, devido à pandemia e ao trabalho em casa, o chamado home-office, têm tido um lugar de destaque
+nas residências. <br><br>O que antes era considerado apenas um objeto para se sentar à mesa na hora das refeições, se tornou
+algo importante, uma vez que as pessoas passam horas sentadas na mesma posição, sendo assim, é desejado um lugar
+confortável e ergonômico.<br><br>
+Porém esta pode ser mais uma cilada dos objetivos de uma sociedade pautada nas desigualdades sociais, no capital e no
+poder, não vivem a realidade e passam a viver sentados numa cadeira manipulados por uma realidade virtual."
+link-video: "https://www.youtube.com/embed/r83YAk6PmUw"
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outros-autores}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

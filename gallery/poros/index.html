@@ -1,0 +1,125 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Tonil Braz"
+bio: "Nasci e trabalho em Juiz de Fora, Minas Gerais, venho desenvolvendo minhas pesquisas e ações poéticas entendidas
+no campo das artes visuais desde 2013. <br> Com formação no bacharelado interdisciplinar em artes e design (2014),
+licenciatura no ensino de artes visuais (2015) e com especialização no ensino de artes (2018) ambos realizados na
+Universidade Federal de Juiz de Fora (UFJF), contando ainda com passagem na Escola de Artes do Parque Lage (2013).
+<br>
+Atualmente sou mestrando em poéticas visuais no curso de pós-graduação em Artes, Cultura e Linguagens (UFJF).<br>
+Em minha trajetória participei de várias exposições coletivas com destaque para o IX Salão de Artes de Itabirito (2020)
+sendo contemplado com prêmio de menção honrosa, além de duas exposições individuais com destaque para a instalação 'Um
+Lugar em Outro Lugar' (2016), projeto contemplado por lei de incentivo à cultura. <br>Em 2021 entre os meses de setembro e
+outubro participei do Salão de Arte de Vinhedo – SP.<br>
+Além de artista, atuo como professor nas escolas da rede pública de educação e espaços não convencionais."
+rede-social: "https://www.instagram.com/tonilbraz/"
+titulo-da-obra: "Poros"
+resumo-da-obra: "Toda uma cultura plural oriunda do cruzo sofre um velamento vinculado à normatividade, à disciplina e
+ao poder.    
+     <br> <br> A série 'Poros' propõe o seu desvelamento. <br><br>
+Nesse conjunto de esculturas, pele e ferro se encontram. <br><br> Em seu corpo o ferro é proveniente de grades de segurança
+encontradas em residências, lugares públicos, fábricas e escolas. <br><br> A partir do gesto de apropriação e desmanche o que
+antes era grade ganha outra forma. <br><br> Em sua transmutação a sinuosidade nas formas é conduzida por aros, onde repousa agora
+a pele, o couro pertencido ao tambor ontem.<br><br>
+Nesse sentido, venho entendendo o tambor como um dos fios essenciais da cultura brasileira, presente nos ritos e nas
+festas. <br><br>Apesar de trazer elementos do tambor, o trabalho não é um instrumento e sim está situado entre instrumento e
+escultura. <br><br>É no 'entre' que o trabalho se apresenta como uma espécie de objeto fronteiriço."
+
+images:
+ - image_path: /gallery/archive/poros/poros-tonil-braz-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/poros/poros-tonil-braz-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/poros/poros-tonil-braz-03.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <br><br>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png" 
+
+nome: "OSSO videoarte"
+bio: "Equipe formada em 2016, a OSSO videoarte envolve profissionais de Arquitetura, Design, Artes Visuais, Teatro e
+Performance, numa tentativa de extrapolar os limiares das áreas envolvidas a partir de trabalhos cujo elemento central é
+o corpo humano e sua complexa teia de significações. <br> As séries fotográficas 'Estrangeiros' (outubro de 2016 – maio de
+2017), 'Natureza Humana' (2017) e 'Apnéia' (2018 – 2019), bem como as videoinstalações 'Meu corpo minha morada' (maio –
+outubro de 2016), 'Devoção' (novembro de 2016 – maio de 2017) e 'Fronteiras' (julho – setembro de 2017) são os primeiros
+resultados dessa ação interdisciplinar.<br>
+Em abril de 2017 a OSSO videoarte foi selecionada no edital IMIGRAÇÃO: por um mundo sem fronteiras, promovido pela
+galeria Transarte, com o projeto 'Estrangeiros' (série fotográfica + video) e em setembro de 2017 ocorre a estreia
+oficial da equipe na sexta edição do Festival Artes Vertentes – Festival Internacional de Artes de Tiradentes, com a
+exibição de apenas uma das faces da instalação 'Devoção'.<br> A mostra Imigração: por um mundo sem fronteiras esteve em
+cartaz em São Paulo entre 23 de março e 30 de junho de 2018, resultando dessa exposição um catálogo ilustrado com o
+conjunto de obras e artistas selecionados."
+rede-social: "@ricardocoelho_pitu"
+titulo-da-obra: "Meu corpo minha morada"
+resumo-da-obra: "Como expressou Alain Corbin (2009, p. 9): 'O corpo é uma ficção, um conjunto de representações mentais,
+uma imagem inconsciente que se elabora, se dissolve, se reconstrói através da história do sujeito, com a mediação dos
+discursos sociais e dos sistemas simbólicos.' <br><br>
+O que é ou o que pode ser o corpo, esse frágil e opaco invólucro que encerra o sujeito, princípio e fim da própria
+humanidade? <br><br>Nesse momento, o Mundo parece sem respostas a essa pergunta. Aos Estrangeiros ou, simplesmente, àqueles que
+se deslocam forçosamente pela manutenção da vida, é-lhes suprimido o direito à liberdade e ao exercício simbólico,
+restando-lhes apenas o reconhecimento da própria fragilidade: 'Meu corpo minha morada' .
+<br><br>
+FICHA TÉCNICA<br>
+Ideia original, direção e fotografia: Ricardo Coelho<br>
+Preparação de atores: Luís Firmato<br>
+Atores:<br>
+ Érika Santos<br>
+Júnio de Carvalho<br>
+Luís Firmato<br>
+Mar de Paula<br>
+Ana Pi Videira<br>
+Ricardo Coelho<br>
+Thales Henrique Rocha<br>
+Edição de Vídeo e Som: OSSO videoarte<br>
+Cenotécnica: Ricardo Coelho<br>
+Produção: OSSO videoarte, 2016"
+
+link-video: "https://www.youtube.com/embed/bc6R6jSl00U" 
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

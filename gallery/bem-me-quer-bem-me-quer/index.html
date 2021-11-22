@@ -1,0 +1,101 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+
+nome: "Augusto de Paula"
+bio: "José Augusto de Paula Pinto, graduação em Museologia pela Universidade Federal de Minas Gerais-UFMG, nos anos de
+2010 a 2014; um dos coordenadores do Muquifu, Museu dos Quilombos e Favelas Urbanos, no Morro do Papagaio, em Belo
+Horizonte, desde o ano de 2013. <br> Criador do Muquifoca, o Muquifu no carrinho de pipoca, a partir dos conceitos da
+Museologia Social, em especial a Museologia do Afeto. <br> Pesquisas sempre direcionadas ao estudo da teoria da Museologia,
+com ênfase para os estudos a partir dos anos 1960 aos dias atuais. Curadoria das Exposições 'Pedro Pedreiro, tijolo com
+tijolo em um desenho lógico' e 'Na fé da resistência, no Aché do nosso canto', junto com as museólogas Luciana Campos
+Horta e Dalva Pereira. <br> Ambas as exposições de longa duração no Muquifu. <br> Desde janeiro de 2021 mestrando no Programa
+Interdepartamental de Pós-graduação Interdisciplinar em Artes, Urbanidade e Sustentabilidade – PIPAUS, da Universidade
+Federal de São João Del Rei – UFSJ. <br>Membro do GTRANS, Grupo Transdisciplinar de Pesquisa em Artes e Sustentabilidade. "
+rede-social: ""
+titulo-da-obra: "Bem me quer, bem me quer."
+resumo-da-obra: "O multi artista Cleiton Gós criou o Palhacin Muquifentu neste período pandêmico como forma de
+extravasar as angústias e tristezas, além da ansiedade causada pelo isolamento social imposto pelo covid-19 nos últimos
+dois anos. Neste vídeo realçamos o trabalho do ator que se traveste em palhaço e transforma-se em mediador cultural,
+contando as histórias por trás dos objetos do Museu dos Quilombos e Favelas Urbanos - Muquifu, e junto ao Muquifoca, o
+museu no carrinho de pipoca leva a uma explosão de pipocas e memórias."
+link-video: "https://www.youtube.com/embed/paFZDY11Mio" 
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

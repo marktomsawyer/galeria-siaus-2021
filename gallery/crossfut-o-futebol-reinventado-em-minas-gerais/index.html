@@ -1,0 +1,98 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Fred Le Blue"
+bio: "Pós-doutorando EBA UFMG; P.H.D. Urban Planning IPPUR/UFRJ; <br> mestre em Memória Social PPGMS/UNIRIO; <br> graduado em
+Comunicação Social FIC/UFG; <br> Pesquisador associado do Programa Avançado de Cultura Contemporânea (PACC-UFRJ); <br>Idealizador
+do Movimento Artetetura e Humanismo;<br> E CEO da Editora Multimídia Brasílha Teimosa."
+rede-social: "www.editorabrasilhateimosa.weebly.com"
+titulo-da-obra: "CROSSFUT: o futebol reinventado em Minas Gerais"
+resumo-da-obra: "Topografia acidentada. Matéria prima mineral indispensável para o CrossFut, um futebol reinventado em
+Belo Horizonte acidentalmente. <br><br> Em meio a pandemia de COVID-19, a quarentena não poderia significar sedentarismo, já que
+isso é uma das comorbidades que intensificam as chances de se tornar sintomáticos para a doença. <br><br>Como todos os esportes
+coletivos foram suspensos e mesmo os campeonatos estaduais, como o mineiro, foram interrompidos por mais 3 meses, o
+jeito foi usar a cabeça para fazer gols com os pés para praticar uma hora diária de atividade física. <br><br> Sem deixar de
+seguir o isolamento social e uso de máscara, Fred Le Blue tira proveito da protuberância geológica do meio ambiente
+mineiro para interagir socialmente com a natureza. <br><br> O resultado é uma espécie de caiaquismo, parkour, alpinismo, squash,
+crossfit, game e futebol. <br><br>Quem diria, que uma bola made in China iria criar um futebol made in Minas? Ladeiras íngremes
+não vão faltar."
+link-video: "https://www.youtube.com/embed/tyvKrSTfDTg" 
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

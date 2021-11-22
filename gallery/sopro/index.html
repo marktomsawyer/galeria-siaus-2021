@@ -1,0 +1,108 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "aniram"
+bio: "Ana Marina ou aniram é fotógrafa e artista visual. Atua como fotógrafa da Universidade Federal do Rio de Janeiro,
+atuando há 3 anos na Coordenadoria de Comunicação Social (Coordcom). <br> Desde 2015 expõe suas obras em espaços culturais e
+galerias em cidades como Juiz de Fora (MG), São Paulo (SP) e Montevideo (UY)."
+rede-social: "https://marinaniram.tumblr.com/"
+titulo-da-obra: "Sopro"
+resumo-da-obra: "O autorretrato, feito com câmera digital e intitulado Sopro, foi originalmente pensado para uma
+exposição sobre musicalidade. Porém, por ser um autorretrato no qual apareço nua, foi recusado.<br><br> Desde então, este
+trabalho tem estado guardado, esperando a oportunidade certa de ser apresentado.<br><br>
+Quando era bem pequena, lembro de precisar fazer alguns exames no coração. <br><br>Existia ali uma espécie de espaço vazio, algo
+que até hoje não sei explicar. Com o tempo, esse espaço naturalmente se fechou.<br><br> Não foi preciso cirurgia nem remédio -
+apenas o tempo.<br><br>
+Hoje entendo que esse espaço era um sopro de música para a alma; algo que eu, e somente eu, poderia escutar. Então me
+conecto com esse som... E deixo-o fazer parte de mim."
+
+images:
+ - image_path: /gallery/archive/sopro/sopro.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

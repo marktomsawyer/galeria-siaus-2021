@@ -1,0 +1,137 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Nalu Carvalho"
+bio: "Nalu é uma curiosa por natureza. Arquiteta e urbanista de formação, nascida em São João del-Rei e criada na beira
+do Rio Grande gosta de ver beleza em tudo que parece banal. <br> Desse gosto, nasceu sua pesquisa de mestrado e os postais
+Pela Greta."
+rede-social: ""
+titulo-da-obra: "Pela Greta"
+resumo-da-obra: "<p> Os abandonos urbanos são resíduos da nossa cultura, uma cultura do desperdício, do descarte e da
+substituição. 
+</p><p>Esses restos são vistos como inúteis e improdutivos em uma sociedade que valoriza o consumo como bem
+maior. Na contramão desse pensamento, os artistas enxergam nessas ruínas, poesia para suas ações. </p><p>A poesia de Manoel de
+Barros já anunciava: 'o que é bom para o lixo é bom para a poesia' e inspira a série de postais Pela Greta. </p><p>O
+cartão-postal é a expressão da memória de um local que merece ser lembrado. Em geral, os postais representam pontos
+turísticos de cidades conhecidas. </p><p>No entanto, a série Pela Greta desconstrói esse papel do ponto turístico levando um
+olhar poético para as ruínas de uma pequena cidade desconhecida de Minas Gerais, em que a natureza e as artes avançaram
+fazendo presença no esquecimento. Desconfio que as plantas leiam Manoel de Barros."
+
+images:
+ - image_path: /gallery/archive/pela-greta/pela-greta-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-05.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-06.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-07.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-08.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-09.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/pela-greta/pela-greta-10.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <br><br>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

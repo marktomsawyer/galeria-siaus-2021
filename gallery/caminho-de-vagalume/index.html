@@ -1,0 +1,112 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+
+nome: "Álvaro Carvalho"
+bio: "Licenciado em Geografia pela UFOP, especialista em Ensino de Artes Visuais pela EBA/UFMG, mestrando no
+PIPAUS/UFSJ. <br> Tem a fotografia como hobby e interesse na interdisciplinaridade entre Artes e Geografia, assim como na
+cartografia e suas múltiplas faces."
+rede-social:
+titulo-da-obra: "Caminho de vagalume"
+resumo-da-obra: "'Caminho de vagalume' é parte da pesquisa intitulada 'A poética cartográfica', que está em curso no
+programa de pós graduação interdisciplinar em Artes, Urbanidades e Sustentabilidade - Pipaus/UFSJ. <br><br> Percorro a cidade
+cartografando afetos e emoções, associados às casas onde residi em minha vida. Entre essas andanças, sou surpreendido
+com uma visita inesperada: um vagalume! <br><br> Ele entra em meu quarto, ilumina o ambiente, invade meu território (ou será que
+eu já o havia invadido há tempos?). <br><br> Em um rápido ato, pego o celular e registro aquele encontro tão especial e efêmero.
+Caminhos que se cruzam...Capturo o tempo. <br><br>Sou grato pela visita. <br><br>
+Para as fotografias foram utilizadas as técnicas de longa exposição a partir da câmera de celular (rastro do valagume),
+e de longa exposição e light painting com câmera profissional (fotografia do lar)."
+
+images:
+ - image_path: /gallery/archive/caminho-de-vagalume/caminho-de-vagalume-alvaro-carvalho-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/caminho-de-vagalume/caminho-de-vagalume-alvaro-carvalho-02.jpg   
+   copyright:     
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+
+nome: "Coletivo Renda-se"
+autores: "Tássia Murad Abreu e Igino de Oliveira Silva Junior"
+bio: "Coletivo Renda-se - coletivo formado pelos pesquisadores Tássia (estilista, arte educadora) e Igino (arquiteto,
+artista digital) e representantes da comunidade Alto das Mercês (SJDR) - Michelle, Elisa, Edir, Ticiane, Carolina,
+Lúcia, Kiko, Daniela. <br> Coletivo foi criado com o objetivo em comum de dar visibilidade ao bairro Alto das Mercês e
+protagonismo para as pessoas que ali moram, através da arte têxtil e digital. <br>A criação do coletivo nos permitiu mostrar
+o nosso trabalho dentro do próprio bairro, em rodas de conversas, participações acadêmicas e exposições artísticas, tais
+como: Intervenções urbanas no bairro (encontros semanais e apresentações do trabalho na Rua do Ouro, no Alto da Serra e
+no Fortim dos Emboabas, SJDR), ARTECH 2021 (Aveiros, Portugal), 15ª Primavera dos Museus 2021 (IBRAM), 'É trabalho de
+mulher' (Galeria Adro, SJDR), oficina criativa 'Renda-se' (IV Mostra Vestígios 2019, Solar da Baronesa, SJDR)."
+rede-social: "https://youtu.be/RvLKmdsQRGs"
+titulo-da-obra: "Intervenção artística e urbana Renda-se"
+resumo-da-obra: "Vídeo final da intervenção artística e urbana Renda-se que aconteceu no patrimônio histórico Fortim dos
+Emboabas, em São João del-Rei, em dezembro de 2020. Intervenção realizada em co-criação dos pesquisadores Tássia Murad
+Abreu e Igino de Oliveira Silva Junior juntamente com os representantes da comunidade Alto das Mêrces, objetivando
+visibilidade e protagonismo para a comunidade. <br><br>Apresentamos a vestimenta-ação com o propósito de apropriação do espaço
+pela criação de ambientes interativos que possibilitam novos modus de diálogo e comunicação através da consciência
+reticular experimentada e as tecnologias criativas desenvolvidas como o tear de renda têxtil e digital que materializou
+a vestimenta para aquele espaço."
+link-video: "https://www.youtube.com/embed/8H8rb8Z2rss"
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

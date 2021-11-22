@@ -1,0 +1,116 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Flávio Silvério"
+bio: "Arquiteto, urbanista e um professor apaixonado por todas as possibilidades de expressão por meio da arte,
+principalmente aquelas que procuram retratar questões políticas e de improbidades como um alerta ao mundo."
+rede-social:
+titulo-da-obra: "Brasil, mostra tua cara!"
+resumo-da-obra: "A obra assume as influências da tradicional arte sanjoanense de confecção dos tapetes de serragem e
+areia, durante os dias da Semana Santa, e dos trabalhos de reorganização e ressignificação de materiais de Vik Muniz. <br><br>
+Para tal concepção, realizada no ano de 2017, diferentemente da serragem e areia, foram utilizados resquícios da
+vegetação típica do Cerrado e Mata Atlântica.<br><br>
+O desenho, surgido pela organização de folhas, procura mostrar o rosto de um índio, com o olhar incisivo e semblante
+desalegre, fazendo referência às improbidades que a Serra do Lenheiro (local de inserção do trabalho) e as primeiras
+comunidades que ali viveram (povos indígenas) experienciaram no processo de colonização. <br><br>A figura é uma homenagem aos
+nossos ancestrais, tendo como título a emblemática frase do refrão da composição 'Brasil', de Cazuza, de 1987 - canção
+tida como um protesto aos escândalos políticos, desigualdades sociais e injustiças vivenciadas em nosso país."
+
+images:
+ - image_path: /gallery/archive/brasil-mostra-tua-cara/brasil-mostra-tua-cara-flavio-silverio-01.jpg
+   copyright:
+
+ - image_path: /gallery/archive/brasil-mostra-tua-cara/brasil-mostra-tua-cara-flavio-silverio-02.jpg
+   copyright:
+
+ - image_path: /gallery/archive/brasil-mostra-tua-cara/brasil-mostra-tua-cara-flavio-silverio-03.jpg
+   copyright:
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+</head>
+
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>
+      <p class="hashtags">{{page.rede-social}}</p>
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">
+        {% for image in page.images %}
+        <figure class="gallery-item">
+          <header class='gallery-icon'>
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

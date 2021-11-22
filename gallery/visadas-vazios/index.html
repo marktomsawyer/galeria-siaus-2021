@@ -1,0 +1,124 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Maria Cristina Alves Pereira"
+bio: "Com formação e atuação em Psicologia desde 2000. Especialista em Saúde Pública pela UFJF. <br> Graduou-se, também, em
+Arquitetura e Urbanismo pela UFSJ.<br> Atualmente, está vinculada ao grupo de pesquisa A. T. A. e ao mestrado
+interdisciplinar do PIPAUS na UFSJ, onde realiza pesquisa sobre as transformações socioespaciais mediada pela
+fotografia. <br>Atuou na gestão pública de saúde, no desenvolvimento urbano e no meio ambiente. <br>Nos últimos tempos, vem
+organizando e elaborando os gestos fotográficos em torno da discussão psicossocial, da afetividade, da memória e dos
+espaços urbanos."
+rede-social: "https://www.instagram.com/mcristyna/"
+titulo-da-obra: "Visadas & Vazios"
+resumo-da-obra: "Os registros fotográficos foram elaborados a partir dos atravessamentos no espaço urbano de São João
+del-Rei na pandemia.<br><br> A superposição e a coloração das fotos foram inspiradas, primeiramente, por uma releitura da
+Trilogia de Kieslowski, onde 'A Liberdade é Azul' (Trois couleurs: Bleu, 1993), 'A Igualdade é Branca' (Trois couleurs:
+Blanc, 1994) e 'A Fraternidade é Vermelha' (Trois couleurs: Rouge, 1994).<br><br>
+Na captação de imagens temos utilizado as câmeras da Nikon D-5000 e do Smarthfone Samsung J8, os registros imagéticos
+abarcam tamanho e dimensões específicos desses dispositivos.<br><br> Na edição e elaboração do hibridismo das imagens foram
+utilizados filtros dos aplicativos Instagram, Photo Blend e Canva. <br><br> Adotou-se para apresentação o Canva com as dimensões
+de 27,9 cm x 21,6 cm (digital sem/impressão). <br><br> Buscou-se articular as imagens numa narrativa, que contemple olhares sobre
+o espaço urbano e o tempo, desvelando instantes e outras possibilidades para a paisagem urbana."
+
+images:
+ - image_path: /gallery/archive/visadas-vazios/visadas-vazios-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/visadas-vazios/visadas-vazios-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/visadas-vazios/visadas-vazios-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/visadas-vazios/visadas-vazios-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/visadas-vazios/visadas-vazios-05.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

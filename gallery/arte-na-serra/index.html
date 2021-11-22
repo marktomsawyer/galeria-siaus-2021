@@ -1,0 +1,97 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Arte na Serra - Para não queimar o futuro"
+outros-autores: "Zandra Coelho de Miranda; Fernanda Nascimento Corghi; Elivelton Ferreira Tomás; Paulo Henrique da
+Silva"
+bio: ""
+titulo-da-obra: "Arte na Serra - Para não queimar o futuro"
+resumo-da-obra: "Projeto que visa valorizar a paisagem são-joanense em suas peculiaridades, e defendê-la nos espaços
+destinados à preservação ambiental: parques e unidades de conservação, que estão sujeitos à depredação, vandalismo e à
+pressão imobiliária. <br> <br>
+Gostaríamos de fomentar um vínculo estreito entre as pessoas e a paisagem através do incentivo ao
+uso da Serra pela população da região de forma cotidiana, e promover um olhar comprometido com a paisagem local.
+Fortalecendo as redes de comunicação entre os usuários desses espaços teríamos, entre os inúmeros outros impactos, maior
+eficiência na detecção de incêndios."
+link-video: "https://www.youtube.com/embed/r9REYjiDTMw"
+
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+</head>
+
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>
+
+      <!-- VIDEO -->
+      <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outros-autores}}</h3>
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

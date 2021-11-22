@@ -1,0 +1,107 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+
+nome: "ZUCCO"
+bio: "Zucco mora em Tiradentes. <br> É formado em Design pela Universidade Mackenzie (SP), fotografia, pintura a óleo,
+formação em artes pela Bauhaus, IED, Art Gallery of Ontario, FAOP e é mestrando na UFSJ. Desenvolvendo artes visuais
+transmidiáticas."
+rede-social: 
+titulo-da-obra: "Que fizemos nós?"
+resumo-da-obra: "Numa viagem ao Goiás, Alto Paraíso, me deparei com uma grande quantidade de queimadas. <br><br>O cerrado e sua
+biodiversidade antes vistoso e imponente, agora enchiam os olhos de lágrimas. Entrei em contato com o txai (na língua
+Kaxinawá significa 'mais que amigo, irmão') Alexandre Adas para fazermos um vídeo denúncia o qual se materializa aqui,
+nesta apresentação para o SIAUS 2021. <br><br>
+As queimadas (muitas vezes criminosas) assolam importantes biomas - Amazônia, Pantanal, o Cerrado, e outros diversos
+pontos do Brasil.<br><br> A obra 'Que fizemos nós?'' convida a refletir sobre a emergência climática, o ecocídio, deflagrar
+questões intrincadas ao agronegócio (destruidor de toda a biodiversidade local) e justiça climática a qual abrange
+questões sociais extremamente atuais e relevantes.
+<br><br>
+O vídeo tem duração de 7:46 min <br>
+AudioVisual: Zucco (@vulgo_zucco) <br>
+Edição: Zucco <br>
+Performer: Alexandre Adas (@adas.alexandre) <br>
+Música: Palace Heaven Up There piano cover <br>
+By Heavypiano <br>
+Imagens: Banco de imagens Google <br>
+#Denuncie193" 
+link-video: "https://www.youtube.com/embed/xXixnbfL1VY"
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

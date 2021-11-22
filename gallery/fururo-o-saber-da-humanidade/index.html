@@ -1,0 +1,104 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "G1 - O Design do futuro em Artes, Urbanidades e Sustentabilidade"
+outros-autores: "Rafaella Anielly Silva Borges; Lia Brito de Lima; Carlos Eduardo Dias Lopes; Hugo Leonardo Cruz
+Nogueira; Camila Ruas de Paula; Bruna Chaves Ramos; Taciana Alexsandra da Silva; Isma Costa"
+bio: "O grupo que surgiu das atividades da matéria 'O design do futuro em Artes, Urbanidades e Sustentabilidade', se
+apresenta criticamente, se posicionando frente às investigações dialogadas no meio acadêmico. <br> Lia e Carlos criaram
+textos poéticos embasados na pesquisa de: Bruna, Camila, Carlos, Hugo, Lia, Rafaella, Taciana e Isma.<br> Hugo deu vida com
+sua voz através da canção, Rafaella se propôs a criar colagens e transformar a colagem em uma foto-animação. <br>
+Representando assim, o trabalho coletivo de uma equipe.<br> Cada componente do grupo veio de diferentes áreas de
+conhecimento se encontrando num mestrado interdisciplinar com propostas que se interconectam."
+rede-social:
+titulo-da-obra: "Futuro (?) O Saber da Humanidade"
+resumo-da-obra: "O Projeto audiovisual intitulado como 'Futuro (?) O Saber da Humanidade' surge em meio às atividades
+desenvolvidas para a matéria 'O design do futuro em Artes, Urbanidades e Sustentabilidade'. <br><br>Após a leitura do livro 'O
+mundo codificado: por uma filosofia do Design e da Comunicação' de Vilém Flusser ficamos tentados a experienciar novas
+formas do fazer acadêmico, tendo como partida o design que para Flusser se resumia em propósito e a comunicação por
+formas não verbais ou híbridas, que neste momento nos pareceram mais assertivas. <br><br>Entendemos nosso propósito e tratamos
+de expressá-lo artisticamente, compomos uma música e esta tomou vida através do canto e das colagens.<br><br> Trouxemos uma
+crítica social ao progresso e a quem comanda nosso desenvolvimento. <br><br>Desejos humanos? Progresso? Para quem? De quem? Tais
+indagações se fazem necessárias em meio ao cenário em que estamos inseridos.<br><br> A proposta visual não traz respostas, mas,
+faz refletir, pensar."
+link-video: "https://www.youtube.com/embed/BKHEZWL0rNg"
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+</head>
+
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>
+
+      <!-- VIDEO -->
+      <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outros-autores}}</h3>
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

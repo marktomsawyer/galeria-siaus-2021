@@ -1,0 +1,130 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Delton Mendes Francelino (Instituto Curupira)"
+bio: "Delton Mendes Francelino é compositor, diretor de processos artísticos gerais no Instituto Curupira, além de autor
+de dois livros. <br> Atualmente também atua em estudos científicos relacionados ao Meio Ambiente, Patrimônio Cultural e
+Natural, Conservação da Natureza e processos vários relacionados à Ecologia Urbana. <br>Com esse foco, possui dois mestrados
+e atualmente é doutorando na UFMG. <br>Também é coordenador do Centro de Estudos em Ecologia Urbana do IF Barbacena; já
+coordenou projeto alternativo de Agroecologia nos EUA.
+<br>
+Este conjunto de imagens fez parte de um projeto de estudo e prática performática em 2015 do qual ele foi
+co-desenvolvedor, via Instituto Curupira.<br> Contemporaneamente, junto à ONG, os trabalhos de sensibilização ambiental
+continuam, a partir de várias frentes, sempre com focos em processos alternativos educativos.
+<br>
+Também é Comunicador Científico há 11 anos, tendo o Podcast 'Falando de Ciência e Cultura': https://bit.ly/31mEZVR .
+<br>
+Colunista Científico/Ambiental em mídias e jornais. Interessados poderão baixar gratuitamente seu segundo livro, o
+'Infinitas Estações: um livro manifesto pela mudança do homem e pelo respirar da natureza' pelo link
+https://bit.ly/3bLWO4r."
+rede-social: "https://www.instagram.com/delton.mendes/ <br> https://www.instagram.com/institutocurupira/"
+titulo-da-obra: "Performance Art - 'Cadê as árvores que estavam aqui?'"
+resumo-da-obra: "Estas fotografias representam parte da Performance Art 'Cadê as árvores que estavam aqui?'' realizada
+pelo Instituto Curupira, ONG de cunho ambiPAISAGENSental, ecológico e cultural, na cidade de Barbacena, Minas Gerais, em
+questionamento ao corte de árvores nativas na região central do município.<br><br> Em manifesto pacífico, atores e atrizes da
+ONG se acomodaram silenciosamente nos 'buracos' onde estavam as árvores, numa tentativa de ecossensibilização. <br><br> Por cerca
+de 3 horas as pessoas que transitavam pela região puderam ver os artistas assentados, deitados, alguns em posição fetal
+e um outro grupo de profissionais do Instituto se incubiu de fotografar.<br><br> Dentro das pautas de discutibilidade possíveis
+do SIAUS 2021, destacam-se o Direito à Cidade, a importância da Conservação Ambiental e a necessária e sempre relevante
+ampliação de reflexões acerca do que é a Sustentabilidade em contextos locais e regionais; como as pessoas do senso
+comum podem se afetar para a mudança de comportamentos ambientais?"
+
+images:
+ - image_path: /gallery/archive/performance-art-cade-as-arvores-que-estavam-aqui/performance-cade-as-arvores-delton-mendes-curupira-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/performance-art-cade-as-arvores-que-estavam-aqui/performance-cade-as-arvores-delton-mendes-curupira-02.jpg   
+   copyright:   
+   
+ - image_path: /gallery/archive/performance-art-cade-as-arvores-que-estavam-aqui/performance-cade-as-arvores-delton-mendes-curupira-03.jpg   
+   copyright:   
+ 
+ - image_path: /gallery/archive/performance-art-cade-as-arvores-que-estavam-aqui/performance-cade-as-arvores-delton-mendes-curupira-04.jpg   
+   copyright:   
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

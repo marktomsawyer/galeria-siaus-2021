@@ -1,0 +1,99 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "Paulo Jarbas"
+bio: "Paulo Jarbas Cardoso da Silva, arquiteto urbanista, engenheiro ambiental, ambientalista, agroecologista,
+pesquisador, artista experimental, ginasta, mestrando no PIPAUS - UFSJ e integrante do Grupo de Pesquisa A.T.A."
+rede-social:
+titulo-da-obra: "Araucárias nos Caminhos"
+resumo-da-obra: "Araucárias nos Caminhos uma colagem animada musical, na qual pretende-se abordar criticamente fases do
+Brasil, desde antes de Cabral, o Pindorama, passando pela invasão colonial de Portugal, o massacre e escravização de
+indígenas e pretos, destruição da Natureza, imposição de uma lógica urbanizadora eurocêntrica, desrespeitando leis
+naturais do contexto geosociomorfológico. Sem deixar de insinuar possíveis rompimentos com esse paradigma pensando em
+designes futuros ancorados em sistemas biotecnológicos diversos, quem sabe ...vestígios do futuro... <br><br>
+Uma experimentação artística de colagem animada musical, cuja técnica foi a seleção, recorte e colagem de iconografia,
+entre mapas antigos, fotos e desenhos autorais e imagens de uso livre da internet, para montagem de uma série de
+quadros, utilizando o software Adobe Photoshop. Posteriormente estes quadros foram colocados em série e animados no
+Windows Movie Maker. <br><br> Esta animação recebeu ainda um trecho/versão, com arranjo de João Lara da canção Árvore, (SILVA,
+P.J.C. e MARTINS, Mateus. C., 2020)."
+link-video: "https://www.youtube.com/embed/1ZQnyhjMQV8"
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

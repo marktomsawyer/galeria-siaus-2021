@@ -1,0 +1,132 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Gustavo Oliveira dos Santos"
+outros autores:
+bio: "<b>Gustavo Oliveira</b> é atuante no campo artístico desde 2016, é graduando em Artes Visuais pela Universidade Federal
+de Uberlândia e atualmente assina como gutasvo. <br> Explora contemporaneamente a identidade como autorreflexão, o fetiche do
+consumo nos centros urbanos, o ser e sociedade e debate a percepção da morte na cultura ocidental, apresentando
+reinterpretações e provocações, sempre fomentando a discussão. <br> Com 24 anos, o artista se encontra entre a fronteira do
+objeto no campo ampliado, pintura e desenho. <br> Características marcantes de suas obras incluem materiais não tradicionais
+como terra, sangue, objetos e ossos, paleta reduzida e a interação com o espectador pelo toque. <br> Atualmente assessora os
+artistas Ibã Huni Kuin (Isaías Sales) e Kássia Rare Karaja Hunikuin (Kássia Borges) e compõe a equipe de comunicação do
+Museu do Índio de Uberlândia – MG."
+rede-social:
+titulo-da-obra: "Formatos Urbanos"
+resumo-da-obra: "<p> Nos centros urbanos a massificação da circulação das pessoas pode esconder as formas das cidades: elas
+se tornam uma massa única movida pelo objetivo de ser um produto de consumo.
+</p><p>  Nessa intervenção propus a observação dos
+fluxos urbanos e do espaço urbano. </p><p> Em uma deriva inspirada pela Internacional Situacionista identifiquei cenários que
+poderiam ser estilizados por desenhos que fogem do padrão do mimetismo e assim ressaltar as formas do espaço. 
+</p><p> Para a
+composição utilizei apenas linhas que ao encostar no papel não poderiam ter alguma pausa senão no fim do desenho. 
+</p><p> As
+produções foram feitas nos arredores do centro de Uberlândia - Minas Gerais. A escolha dos lugares se deu por 2
+princípios básicos: lugares onde as formas se confundem com a sua utilidade (consumo; passagem) e pela presença de um
+poste para que o desenho pudesse ser colado como um lambe lambe na altura da vista média da população."
+
+
+images:
+ - image_path: /gallery/archive/formatos-urbanos/formatos-urbanos-gustavo-oliveira-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/formatos-urbanos/formatos-urbanos-gustavo-oliveira-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/formatos-urbanos/formatos-urbanos-gustavo-oliveira-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/formatos-urbanos/formatos-urbanos-gustavo-oliveira-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/formatos-urbanos/formatos-urbanos-gustavo-oliveira-05.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <br>
+  <br>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

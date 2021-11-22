@@ -1,0 +1,120 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Anakelly Silva Santos"
+bio: "Anakelly é mestranda do PIPAUS-UFSJ. Graduada em Arquitetura e Urbanismo pela UFSJ.  <br>
+Pesquisadora do Instituto
+Histórico e Geográfico de Ritápolis - IHGR. Fotógrafa amadora. Artista amadora. E se define como uma 'amadora
+engajada'."
+rede-social: "https://padlet.com/anakelly4/xtsk01k5hwyr7joc"
+titulo-da-obra: "Urbanidades Sanjoanenses"
+resumo-da-obra: "As errâncias pela cidade nos revelam e nos provocam diversas sensações, sentimentos e experiências
+captadas pelo andar e pelo olhar. <br><br> E essas sensações, sentimentos e experiências foram capturadas pelas câmeras a mão no
+momento, ora do celular, ora por câmera fotográfica digital.<br><br> O presente ensaio fotográfico apresenta essas imagens
+capturadas durante as errâncias pela cidade de São João Del Rei - MG. <br><br> E apesar de cada imagem ter sido capturada devido
+à sensação, sentimento ou experiência experienciada naquele momento, não descrevo as fotos e nem mesmo o que foi
+experienciado com o propósito de deixar o espectador ter suas próprias sensações e conclusões."
+
+
+images:
+ - image_path: /gallery/archive/urbanidades-sanjoanenses/urbanidades-sanjoanenses-01.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/urbanidades-sanjoanenses/urbanidades-sanjoanenses-02.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/urbanidades-sanjoanenses/urbanidades-sanjoanenses-03.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/urbanidades-sanjoanenses/urbanidades-sanjoanenses-04.jpg   
+   copyright:   
+
+ - image_path: /gallery/archive/urbanidades-sanjoanenses/urbanidades-sanjoanenses-05.jpg   
+   copyright:   
+     
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags">{{page.rede-social}}</p>      
+      <br>
+      <!-- Gallery __-->
+      <div class="gallery masonry-gallery">      
+        {% for image in page.images %}      
+        <figure class="gallery-item">
+          <header class='gallery-icon'>      
+            <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup" title="{{ image.caption }}"
+              data-caption="{{ image.copyright }}">
+              <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>      
+          </header>
+          <figcaption class='gallery-caption'>
+            <div class="entry-summary" id="{{ image.caption }}">
+              <h3>{{image.caption}}</h3>
+              <p>{{image.copyright}}</p>
+            </div>
+          </figcaption>
+        </figure>      
+        {% endfor %}      
+      </div>
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

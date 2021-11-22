@@ -1,0 +1,99 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"    
+
+nome: "ARTEtetura e HUMANismo"
+bio: "Grupo de divulgação científica e extensão sobre arte, antropologia e ação social, em interface com a arquitetura e
+urbanismo. <br> A ideia central é fazer da arte pública uma estratégia de política pública urbana, social, ambiental,
+educacional e terapêutica."
+rede-social: "https://www.youtube.com/FredLeBlue"
+titulo-da-obra: "'NOIVINHAS' EM FUGA: fotocartografia íntima para uma direção antifeminicída"
+resumo-da-obra: "Devorando autores e artistas antropofagicamente, devoraremos nesse filme a devoradora e psicóloga
+esquizoanalítica Dra. Suely Rolnik exemplificando conceitos como síndrome de carência-e-captura que mesmo ainda no
+século XXI, ainda assola as 'noivinhas'-mulheres não-feministas ou não a espera de maridos (ou a espera de seus maridos)
+falolegoeurobrancocêntricos no capitalismo cognitivo psicopata, entrecortada pela versão em português do arteteto
+humanista Fred Le Blue da canção 'Dreams' (Dolores O'Riordan / Noel Hogan) da banda irlandesa The Cranberries em meio a
+um período colapsante da subjetividade humana (pandemia global),com imagens do conjunto da obra e da vida de um
+cartógrafo geoafetivo em busca de salvar algum restolho do seu corpo sutil ('vibrátil'), que são um sopro de vida e arte
+para revitalizarmos nossas potências evolutivo-criativas, a partir de micropolíticas desterritorializantes e
+macropolíticas reterritorializantes ativas (não reativas) e transfiguracionais que possam desencouraçar os devires e os
+desejos do inconsciente das suas formas aprisionadas no presente."
+link-video: "https://www.youtube-nocookie.com/embed/whDFcXtnZ6s"
+
+---
+
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta content="charset=utf-8">
+</head>
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>      
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>      
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>      
+      
+       <!-- VIDEO -->
+       <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+      
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>      
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>  
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>

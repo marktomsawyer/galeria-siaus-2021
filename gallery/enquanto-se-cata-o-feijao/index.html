@@ -1,0 +1,111 @@
+---
+layout: page-galeria
+title: "Galeria Virtual"
+description: "2º SIAUS 2021 | PIPAUS | UFSJ"
+active: gallery
+header-img: "img/bg-geral.png"
+
+nome: "Tatiane"
+outros autores: "Maria Cloenes"
+bio: "Tatiane Bispo é uma artista mineira que trabalha com fotografia de espetáculos culturais e também retratos. <br>
+Atualmente desenvolve uma pesquisa de mestrado em Artes, Urbanidades e Sustentabilidade no PIPAUS/UFSJ em parceria com a
+artista visual e bailarina Maria Cloenes que trata da experimentação de processos que envolvem a hibridização da
+fotografia com a costura, cianotipia, audiovisual e performance, para se pensar as representações imagéticas que estão
+no extraquadro do que é denotado como história oficial. Em sua poética, reflete as narrativas plurais de mulheres negras
+e acredita na potência política da fotografia em decidir quem está presente nos enquadramentos. <br>A memória é parte
+central e disparadora de suas pesquisas, nela se conecta com sua ancestralidade, buscando influência daqueles que vieram
+antes e são importantes para a criação artística e compreensão de sua própria história."
+rede-social: ""
+titulo-da-obra: "Enquanto se cata o feijão"
+resumo-da-obra: "É uma vídeo performance ou vídeo arte em cocriação com Maria Cloenes. <br><br>É um filme que fala do tempo, da
+rotina; nossas inquietações e processos artísticos que estão a todo momento sendo atravessados pelas tarefas diárias;
+nossos afetos e sentimentos em meio ao momento tão delicado que estamos enfrentando. <br><br>As lembranças que são despertadas
+através de nossas fotografias, os sonhos recriados diante do caos.<br><br>
+Este trabalho foi selecionado na IV Mostra Solus - Encontros de solos verbais e não verbais.
+<br><br>
+
+Ficha técnica:<br>
+Maria Cloenes: Pesquisa, criação, performance e dança.<br>
+Tatiane Bispo: Pesquisa, criação, captação, edição de imagem e som.<br>
+Marcony Carvalho: Iluminação e som.<br>
+*o som começa em 2:22"
+link-video: "https://www.youtube.com/embed/vdh6u5RJ6hM"
+
+
+
+---
+
+<html class="no-js" lang="pt-BR">
+
+<head>
+  <meta content="charset=utf-8">
+</head>
+
+<body>
+  <section id="content" role="main">
+    <div class="wrapper">
+      <br><br>
+      <h2 class="titulo-obra">{{page.titulo-da-obra}}</h2>
+      <hr>
+      <p>{{page.resumo-da-obra}}</p>
+      <p class="hashtags"> <a href="{{page.rede-social}}">{{page.rede-social}}</a></p>
+
+      <!-- VIDEO -->
+      <div class="">
+        <iframe width="100%" height="600px" src={{page.link-video}} title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+    </div><!-- END .wrapper -->
+  </section>
+  <hr>
+  <h3 class="author">{{page.nome}}</h3>
+  <p>{{page.bio}}</p>
+  <h3 class="author">{{page.outro-autor}}</h3>
+  <br>
+  <br>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- include image popups -->
+  <script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+      $('a.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          titleSrc: function (item) {
+            return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
+          }
+        }
+        // other options
+      });
+    });
+  </script>
+
+  <script src="{{ site.baseurl }}/js/retina.min.js"></script>
+  <!-- include Masonry -->
+  <script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
+  <!-- include mousewheel plugins -->
+  <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
+  <!-- include carousel plugins -->
+  <script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
+  <!-- include svg line drawing plugin -->
+  <script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
+  <!-- include custom script -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <!-- Modernizr -->
+  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+
+
+</body>
+
+</html>
