@@ -2,7 +2,8 @@
 title: SIARTERIA
 email: "siaus2@ufsj.edu.br"
 description: "Galeria Virtual do 2º SIAUS | 2021"
-#url: "https://sunbliss.github.io"
+url: "https://pipaus.ufsj.edu.br"
+#url: "http://localhost/siaus2021"
 baseurl: "/galeria-siaus-2021"
 facebook_username: "siaus2021"
 #twitter_username: ""

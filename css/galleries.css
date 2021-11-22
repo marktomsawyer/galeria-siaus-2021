@@ -12,7 +12,7 @@
 .gallery-caption h3, .gallery-caption p { -webkit-transition: -webkit-transform 0.35s; transition: transform 0.35s; padding: 0; margin: 0; }
 .gallery-item:hover .gallery-caption h3, .gallery-item:hover .gallery-caption p { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
 .gallery-caption h3  { font-weight: bold; text-transform: uppercase; font-size: .9em; letter-spacing: 0.05em; }
-.gallery-caption .entry-summary > p { font-family: Times, serif; font-style: italic; font-size: .8em; opacity: .8; }
+.gallery-caption .entry-summary > p { font-family: Ubuntu, Times, serif; font-style: italic; font-size: .8em; opacity: .8; }
 
 #gallery-filter { display: block; position: relative; top: 12px; }
 #gallery-filter ul {  list-style: none; padding: 0; margin: 0 0 .3em 0; font-size: .8em; letter-spacing: 0.05em; }
@@ -154,17 +154,23 @@ img.mfp-img { padding: 0; }
 }
 
 .author {
-	color:  #A0205F;
+	color: orange;
+	font-family: Ubuntu, 'Open sans', sans-serif;
 }
 
 .hashtags {
-	color:  #A0205F;
+	color:  orange;
 	text-align: right;
 }
 
 .palavras-chave {
-	color:aqua;
+	color: white;
 	text-align: right;
+}
+
+.titulo-obra {
+	color: #EA8E00;
+	font-family: Ubuntu, 'Open sans', sans-serif;
 }
 
 
@@ -179,4 +185,13 @@ img.mfp-img { padding: 0; }
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.gallery-caption  h1{
+	font-family: 'Ubuntu', 'Open sans', sans-serif;
+	font-size: 1.5em;
+	border-radius: 10px;
+	opacity: 0.95;
+	background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(59, 56, 56));
+	
 }
