@@ -1,9 +1,9 @@
 # Site settings
-title: SIARTERIA
+title: SIARTERIA | Galeria Virtual do 2º SIAUS | 2021
 email: "siaus2@ufsj.edu.br"
 description: "Galeria Virtual do 2º SIAUS | 2021"
 url: "https://pipaus.ufsj.edu.br"
-#url: "http://localhost/siaus2021"
+#url: "http://localhost/"
 baseurl: "/galeria-siaus-2021"
 facebook_username: "siaus2021"
 #twitter_username: ""
@@ -39,6 +39,7 @@ nav:
   - GALERIA 2: "/galeria-siaus-2021/galeria-2/" 
   - GALERIA 3: "/galeria-siaus-2021/galeria-3/" 
   - GALERIA 4: "/galeria-siaus-2021/galeria-4/"   
+  - VI MOSTRA VESTÍGIOS: "https://mostravestigios.ufsj.edu.br/2021/"
 #  - SOBRE NÓS: "/galeria-siaus-2021/sobre/" 
   
     
